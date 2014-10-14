@@ -1,0 +1,617 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+/**
+ * Arquivo da classe Php4Console
+ * @author Everton da Rosa everton3x@gmail.com
+ * @version 1.1
+ * @license gpl-3.0.txt GPL v3.0
+ * @filesource
+ * @package Text4Shell
+ * @since 1.0
+ * @example teste.php
+ */
+
+/**
+ * Classe para exibi&Atilde;&sect;&Atilde;&pound;o de texto em ambiente Console (modo texto)
+ * A classe Php4Console possibilita ao desenvolvedor uma maneira f&Atilde;&iexcl;cil e elegante de exibir conte&Atilde;&ordm;do em modo texto.
+ * Se voc&Atilde;&ordf; utiliza o PHP CLI (PHP Command Line Interface), Php4Console &Atilde;&copy; a solu&Atilde;&sect;&Atilde;&pound;o ideal para exibir conte&Atilde;&ordm;do.
+ * @package Php4Console
+ * @since 1.0
+ */
+
+class Php4Console {
+    /** N&Atilde;&ordm;mero de colunas do Console
+     * @var int $cols N&Atilde;&ordm;mero de colunas do Console
+     * @since 1.0
+     */
+    protected $cols;
+    
+    /** Tamanho da &Atilde;&ordm;ltima string usada nos m&Atilde;&copy;todos de carregamento
+     * @var int $strlen tamanho da &Atilde;&ordm;ltima string utilizada nos m&Atilde;&copy;todos de carregamento.
+     * @since 1.1
+     */
+    protected $strlen;
+    
+    /** In&Atilde;&shy;cio da linha de etapas do m&Atilde;&copy;todo openLoadStepLine
+     * @var string $stepindicator In&Atilde;&shy;cio da linha de etapas do m&Atilde;&copy;todo openLoadStepLine
+     * @since 1.1
+     */
+    protected $stepindicator = '  -&gt;';
+    
+    /** N&Atilde;&ordm;mero de etapas da &Atilde;&ordm;ltima barra de progresso iniciada
+     * @var ind $steps N&Atilde;&ordm;mero de etapas da &Atilde;&ordm;ltima barra de progrsso inicada
+     * @since 1.1
+     */
+    protected $steps;
+    
+    /** N&Atilde;&ordm;mero da &Atilde;&ordm;ltima etapa iniciada na barra de progresso
+     * @var int $laststep N&Atilde;&ordm;mero da &Atilde;&ordm;ltima etapa iniciada na barra de progresso
+     * @since 1.1
+     */
+    protected $laststep;
+    
+    /**
+     * Construtor da classe
+     * @method __construct(int $cols) Construtor da classe
+     * @param int $cols N&Atilde;&ordm;mero de colunas do Console. O valor informado aqui ficar&Atilde;&iexcl; armazenado em Php4Console::cols.
+     * @return object Retorna um objeto que representa a classe
+     * @since 1.0
+     */
+    public function __construct($cols) {
+        $this-&gt;setCols($cols);
+        return $this;
+    }
+    
+    /**
+     * Setter do n&Atilde;&ordm;mero de colunas
+     * @method setCols(int $cols) Define o n&Atilde;&ordm;mero de colunas que a classe utilizar&Atilde;&iexcl; para cria&Atilde;&sect;&Atilde;&pound;o das telas
+     * @param int $cols N&Atilde;&ordm;mero de colunas
+     * @return boolean Retorna TRUE em caso de sucesso ou FALSE em caso de falha.
+     * @since 1.0
+     */
+
+    public function setCols($cols){
+        if(!is_int($cols) || $cols &lt;= 0){
+            trigger_error(&quot;N&Atilde;&ordm;mero de colunas inv&Atilde;&iexcl;lido!\n&quot;, E_USER_ERROR);
+            return false;
+        }else{
+            $this-&gt;cols = $cols;
+            return true;
+        }
+    }
+    
+    /**
+     * Getter do n&Atilde;&ordm;mero de colunas
+     * @method getCols() Retorna o n&Atilde;&ordm;mero de colunas armazenado em Php4Console::cols
+     * @return int Retorna o n&Atilde;&ordm;mero de colunas.
+     * @since 1.0
+     */
+    public function getCols(){
+        return $this-&gt;cols;
+    }
+    
+    /**
+     * Prepara o texto para a exibi&Atilde;&sect;&Atilde;&pound;o
+     * @method paragraph(string $text, int $cols) Quebra o texto em linhas com o tamanho m&Atilde;&iexcl;ximo do n&Atilde;&ordm;mero de colunas especificado em $cols.
+     * @param string $text O texto a ser exibido
+     * @param int $cols N&Atilde;&ordm;mero de colunas de quada linha
+     * @param string $align Alinhamento do text. Aceita LEFT (padr&Atilde;&pound;o), RIGHT ou CENTER (m&Atilde;&shy;nuscula/mai&Atilde;&ordm;scula).
+     * @return boolean|array Retorna FALSE em caso de falha ou um array contendo as linhas do texto.
+     * @since 1.0
+     */
+    protected function paragraph($text, $cols = 0, $align = 'left'){
+        if($cols == 0){
+            $cols = $this-&gt;getCols();
+        }
+        if(!is_string($text)){
+            trigger_error(&quot;Texto inv&Atilde;&iexcl;lido!\n&quot;, E_USER_ERROR);
+            return false;
+        }else{
+            $arr = str_split($text, $cols);
+        }
+	
+	$output = array();
+	
+	foreach($arr as $line){
+	    $output[] = str_pad($line, $cols, ' ', $this-&gt;getAlign($align));
+	}
+	
+	return $output;
+    }
+    
+    /**
+     * Quebra um texto em linhas.
+     * @method write(string $text, string $align) Quebra um texto em linhas de acordo com o n&Atilde;&ordm;mero de colunas em Php4Console::cols.
+     * @param string $text O texto a ser escrito.
+     * @param string $align [Opcional] O alinhamento do texto. O padr&Atilde;&pound;o &Atilde;&copy; LEFT, por&Atilde;&copy;m aceita RIGHT e CENTER (maipusculas ou min&Atilde;&ordm;sculas).
+     * @return string Texto quebrado em linhas.
+     * @since 1.0
+     */
+    public function write($text, $align = ''){
+        $str = '';
+	if(strlen($align) == 0){
+	    $align = 'left';
+	}
+        foreach($this-&gt;paragraph($text, 0, $align) as $lines){
+            $str .= &quot;$lines&quot;.PHP_EOL;
+        }
+        return $str;
+    }
+    
+    /**
+     * Quebra um texto em linhas e coloca dentro de um Box.
+     * @method box(string $box, string $title, string $align) Quebra um texto em linhas de acordo com o n&Atilde;&ordm;mero de colunas em Php4Console::cols e coloca dentro de um Box.
+     * @param string $text O texto a ser exibido
+     * @param string $title [Opcional] Se definido, exibe um t&Atilde;&shy;tulo para a caixa.
+     * @param string $align [Opcional] O alinhamento do texto do box. O padr&Atilde;&pound;o &Atilde;&copy; LEFT, por&Atilde;&copy;m aceita RIGHT e CENTER (maipusculas ou min&Atilde;&ordm;sculas).
+     * @return string O Box com o texto quebrado em linhas;
+     * @since 1.0
+     */
+    public function box($text, $title = '', $align = ''){
+        $box = '';
+        $cols = $this-&gt;getCols() - 4;
+	if(strlen($align) == 0){
+	    $align = 'left';
+	}
+        if(strlen($title) &gt; 0){
+            $box .= $this-&gt;hline();
+            $title = str_pad($title, $cols, ' ', STR_PAD_BOTH );
+	    $box .= &quot;| $title |&quot;.PHP_EOL;
+        }
+        $box .= $this-&gt;hline();
+        $lines = $this-&gt;paragraph($text, $cols, $align);
+        foreach($lines as $ln){
+            if(strlen($ln) &lt; $cols){
+                $ln = str_pad($ln, $cols, ' ');
+            }
+	    $box .= &quot;| $ln |&quot;.PHP_EOL;
+        }
+        $box .= $this-&gt;hline();
+        return $box;
+    }
+    
+    /**
+     * Cria uma linha divis&Atilde;&sup3;ria horizontal.
+     * @method hline() M&Atilde;&copy;todo auxiliar que cria uma linha divis&Atilde;&sup3;ria horizontal.
+     * @return string Retorna a linha criada.
+     */
+    protected function hline(){
+        $line = '';
+        $pad_length = $this-&gt;getCols() - 2;
+        $line .= '+';
+        $line .= str_pad('-', $pad_length, '-');
+	$line .= '+'.PHP_EOL;
+        return $line;
+    }
+    
+    /**
+     * Cria uma linha divis&Atilde;&sup3;ria horizontal para tabelas.
+     * @method tblline() M&Atilde;&copy;todo auxiliar que cria uma linha divis&Atilde;&sup3;ria horizontal para tabela.
+     * @param array $colmodel O modelo de coluna da tabela.
+     * @return string Retorna a linha criada.
+     * @since 1.0
+     */
+    protected function tblline($colmodel){
+        $line = '';
+        foreach($colmodel as $col){
+            $len = $col['len'];
+            if($len &lt;= 0){
+                trigger_error('Falha no modelo de coluna', E_USER_ERROR);
+                return false;
+            }else{
+                $pad_length = $len;
+                $line .= str_pad('+', $pad_length, '-');
+            }
+        }
+        $minus = $this-&gt;getCols() - 1;
+        $line = substr($line, 0, $minus);
+        $line .= '+'.PHP_EOL;
+        return $line;
+    }
+
+    /**
+     * Cria uma tabela com os dados recebidos.
+     * @method table(array $data, array $colmodel, string $title) Cria uma tabela os dados contidos em $data. $data precisa estar no formato:
+     * $data = array(
+     *      0 =&gt; array('coluna1' =&gt; 'valor1', 'coluna2' =&gt; 'valor2')
+     *      ,1 =&gt; array('coluna1' =&gt; 'valor1', 'coluna2' =&gt; 'valor2')
+     *      ,2 =&gt; array('coluna1' =&gt; 'valor1', 'coluna2' =&gt; 'valor2')
+     * );
+     * @param array $data Um array multidimensional com os dados de linhas e colunas par exibir.
+     * @param array $colmodel Um array especificando os r&Atilde;&sup3;tulos das colunas, a largura de cada coluna e o alinhamento de cada coluna. Observe que a soma das larguras das colunas deve ser igual ao valor de Php4Console::cols. Se um r&Atilde;&sup3;tulo n&Atilde;&pound;o for especificado, o id da coluna ser&Atilde;&iexcl; utilizado. Os alinhamentos v&Atilde;&iexcl;lidos s&Atilde;&pound;o LEFT, RIGHT e CENTER (em mai&Atilde;&ordm;sculas ou min&Atilde;&ordm;sculas). Se nenhum for especificado, LEFT &Atilde;&copy; adotado. O array segue a estrutura: array( 'campo1' =&gt; array('label' =&gt; 'R&Atilde;&sup3;tulo', 'len' =&gt; 10, 'align' =&gt; 'LEFT'), 'campo2' =&gt; array([...]), [...])
+     * @param string $title [Opcional] Se definido, mostra o texto com t&Atilde;&shy;tulo da tabela.
+     * @return string Retorna a tabela criada.
+     * @since 1.0
+     */
+    public function table($data, $colmodel, $title = ''){
+        if(count($data) == 0){
+            trigger_error('Dados para tabela inv&Atilde;&iexcl;lidos!\n', E_USER_ERROR);
+            return false;
+        }
+        if(count($colmodel) == 0){
+            trigger_error('Modelo de coluna da tabela inv&Atilde;&iexcl;lido!\n', E_USER_ERROR);
+            return false;
+        }
+        
+        //configurando colmodel
+        foreach($data[0] as $k =&gt; $v){
+            if(!isset($colmodel[$k]['label'])){
+                $colmodel[$k]['label'] = $k;
+            }
+            if(!isset($colmodel[$k]['align'])){
+                $colmodel[$k]['align'] = 'left';
+            }
+        }
+        unset($k, $v);
+        
+        $table = '';
+        //t&Atilde;&shy;tulo
+        if(strlen($title) &gt;0){
+            $cols = $this-&gt;getCols() - 4;
+            if(strlen($title) &gt; 0){
+                $table .= $this-&gt;hline();
+                $title = str_pad($title, $cols, ' ', STR_PAD_BOTH );
+                $table .= &quot;| $title |&quot;.PHP_EOL;
+            }
+        }
+        //cabe&Atilde;&sect;alho
+        $table .= $this-&gt;tblline($colmodel);
+        
+        foreach($colmodel as $cmk =&gt; $cm){
+            $len = $cm['len'] - 2;
+            $id = $cmk;
+            $labels[$id] = $this-&gt;paragraph($cm['label'], $len);
+        }
+        unset($cm, $len, $id);
+        
+        $maxsize = 0;
+        foreach($labels as $label){
+            $size = count($label);
+            if($maxsize &lt; $size){
+                $maxsize = $size;
+            }
+        }
+        unset($label);
+        
+        $last = count($labels) - 1;
+        $j = 0;
+		$rows = array();
+		for($i = 0; $i &lt; $maxsize; $i++){
+			@$rows[$i] .= &quot;|&quot;;
+		}
+		foreach($labels as $id =&gt; $arr){
+			if(count($arr) &lt;= $maxsize){
+				$arr = array_pad($arr, $maxsize, ' ');
+			}
+			if($j == $last){
+				$len = $colmodel[$id]['len'] -2;
+			}else{
+				$len = $colmodel[$id]['len'] -1;
+			}
+			$j++;
+			
+			for($i = 0; $i &lt; $maxsize; $i++){
+				if(!isset($colmodel[$id]['align'])){
+					$align = 'center';
+				}else{
+					$align = $colmodel[$id]['align'];
+				}
+				$align = $this-&gt;getAlign($align);
+				$label = str_pad($arr[$i], $len, ' ', $align);
+				$rows[$i] .= &quot;$label|&quot;;
+			}
+		}
+		foreach($rows as $line){
+			$table .= &quot;$line\n&quot;;
+		}
+		
+        $table .= $this-&gt;tblline($colmodel);
+		
+		//corpo com os dados
+		$lens = array();
+		foreach($colmodel as $k =&gt; $v){
+			$lens[$k] = $v['len'] - 2;
+		}
+		
+		$tmp = array();
+		foreach($data as $id =&gt; $line){
+			foreach($line as $fldname =&gt; $fldvalue){
+				$tmp[$id][$fldname] = $this-&gt;paragraph($fldvalue, $lens[$fldname]);
+			}
+		}
+		$data = $tmp;
+		unset($tmp);
+		
+		foreach($data as $line){
+			$maxsize = 0;
+			foreach($line as $row){
+				if($maxsize &lt; count($row)){
+					$maxsize = count($row);
+				}
+			}
+			unset($row);
+			$last = count($line) - 1;
+			$j = 0;
+			$rows = array();
+			for($i = 0; $i &lt; $maxsize; $i++){
+				@$rows[$i] .= &quot;|&quot;;
+			}
+			
+			foreach($line as $id =&gt; $arr){
+				if(count($arr) &lt;= $maxsize){
+					$arr = array_pad($arr, $maxsize, ' ');
+				}
+
+				if($j == $last){
+					$len = $colmodel[$id]['len'] -2;
+				}else{
+					$len = $colmodel[$id]['len'] -1;
+				}
+				$j++;
+				
+				for($i = 0; $i &lt; $maxsize; $i++){
+					if(!isset($colmodel[$id]['align'])){
+						$align = 'center';
+					}else{
+						$align = $colmodel[$id]['align'];
+					}
+					$align = $this-&gt;getAlign($align);
+					$label = str_pad($arr[$i], $len, ' ', $align);
+					$rows[$i] .= &quot;$label|&quot;;
+				}
+			}
+			foreach($rows as $line){
+				$table .= &quot;$line\n&quot;;
+			}
+			$table .= $this-&gt;tblline($colmodel);
+		}
+		
+        return $table;
+    }
+	
+	/**
+	* Retorna a constante para alinhamento.
+	* @method int getAlign(string $align) Retorna o valor da constante de alinhamento para ser utilizada com str_pad().
+	* @param string $align Alinhamento desejado. Admite RIGHT LEFT e CENTER (m&Atilde;&shy;nusculas ou mai&Atilde;&ordm;sculas).
+	* @return int Retorna o valor da constante STR_PAD_RIGHT, STR_PAD_LEFT OU STR_PAD_BOTH, para $align RIGHT, LEFT ou CENTER, respectivamente.
+	* @since 1.0
+	*/
+	protected function getAlign($align){
+		$align = strtolower($align);
+		switch($align){
+			case 'center':
+				return STR_PAD_BOTH;
+				break;
+			case 'right':
+				return STR_PAD_LEFT;
+				break;
+			case 'left':
+				return STR_PAD_RIGHT;
+				break;
+			default:
+				trigger_error(&quot;Alinhamento desconhecido\n&quot;, E_USER_ERROR);
+				return false;
+		}
+	}
+	
+	/** Inicia a exibi&Atilde;&sect;&Atilde;&pound;o de uma linha de log de carregamento
+	 * @method void openLoadLine(string $str) inicia a exibi&Atilde;&sect;&Atilde;&pound;o de uma linha de carregamento
+	 * @param string $str A mensagem de carregamento
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	
+	public function openLoadLine($str){
+	    if(strlen($str) == 0) {
+		trigger_error('Nenhuma mensagem de carregamento definida.', E_USER_ERROR);
+		return;
+	    }else{
+		$maxlen = $this-&gt;getCols() - 8;
+		$str = substr($str, 0, $maxlen);
+		$strlen = strlen($str);
+		$this-&gt;strlen = $strlen;
+		echo $str;
+		return;
+	    }
+	}
+	
+	/** Termina uma linha de carregamento
+	 * @method void closeLoadLine(bool $success) Fecha a &Atilde;&ordm;ltima linha de carregamento aberta por openLoadLine()
+	 * @param bool $success [Opcional] Se TRUE (padr&Atilde;&pound;o), a linha termina com [OK], sen&Atilde;&pound;o, termina com[FAIL]
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	public function closeLoadLine($success = true){
+	    $pad = $this-&gt;getCols() - $this-&gt;strlen;
+	    if($success){
+		echo str_pad('[OK]', $pad, '.', STR_PAD_LEFT);
+	    }else{
+		echo str_pad('[FAIL]', $pad, '.', STR_PAD_LEFT);
+	    }
+	    echo PHP_EOL;
+	    return;
+	}
+	
+	/** Inicia um grupo de linhas de carregamento
+	 * @method void openLoadGroupLine(string $str) Inicia um grupo de linhas de carregamento
+	 * @param string $str Uma mensagem da linha de in&Atilde;&shy;cio do grupo
+	 * @return void Nenhum retorno
+	 * @since 1.1
+	 */
+	public function openLoadGroupLine($str){
+	    if(strlen($str) == 0) {
+		trigger_error('Nenhuma mensagem de carregamento definida.', E_USER_ERROR);
+		return;
+	    }else{
+		$maxlen = $this-&gt;getCols();
+		$str = substr($str, 0, $maxlen);
+		$str = str_pad($str, $maxlen, '.', STR_PAD_RIGHT);
+		echo $str.PHP_EOL;
+		return;
+	    }
+	}
+	
+	/** Inicia uma linha de um grupo de linhas de carregamento
+	 * @method void openLoadStepLine(string $str) Inicia uma linha de um grupo de linhas de carregamento
+	 * @param string $str O texto para ser exibido na linha
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	public function openLoadStepLine($str){
+	    if(strlen($str) == 0) {
+		trigger_error('Nenhuma mensagem de carregamento definida.', E_USER_ERROR);
+		return;
+	    }else{
+		$maxlen = $this-&gt;getCols() - 8;
+		$str = $this-&gt;stepindicator.$str;
+		$str = substr($str, 0, $maxlen);
+		$strlen = strlen($str);
+		$this-&gt;strlen = $strlen;
+		echo $str;
+		return;
+	    }
+	}
+	
+	/** Termina uma linha de um grupo de linhas de carregamento
+	 * @method void closeLoadStepLine(bool $success) Fecha a &Atilde;&ordm;ltima linha de um grupo de carregamento aberta por openLoadStepLine()
+	 * @param bool $success [Opcional] Se TRUE (padr&Atilde;&pound;o), a linha termina com [OK], sen&Atilde;&pound;o, termina com[FAIL]
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	public function closeLoadStepLine($success = true){
+	    $pad = $this-&gt;getCols() - $this-&gt;strlen - 4;
+	    if($success){
+		echo str_pad('[OK]', $pad, '.', STR_PAD_LEFT);
+	    }else{
+		echo str_pad('[FAIL]', $pad, '.', STR_PAD_LEFT);
+	    }
+	    echo PHP_EOL;
+	    return;
+	}
+	
+	/** Termina um grupo de linhas de carregamento
+	 * @method void closeLoadGroupLine(string $str, bool $success) Fecha um grupo linhas de carregamento aberto por openLoadGroupLine()
+	 * @param string $str Uma mensagem para ser exibida ao final
+	 * @param bool $success [Opcional] Se TRUE (padr&Atilde;&pound;o), a linha termina com [OK], sen&Atilde;&pound;o, termina com[FAIL]
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	public function closeLoadGroupLine($str, $success = true){
+	    if(strlen($str) == 0) {
+		trigger_error('Nenhuma mensagem de carregamento definida.', E_USER_ERROR);
+		return;
+	    }else{
+		echo $str;
+		$pad = $this-&gt;getCols() - strlen($str);
+		if($success){
+		    echo str_pad('[OK]', $pad, '.', STR_PAD_LEFT);
+		}else{
+		    echo str_pad('[FAIL]', $pad, '.', STR_PAD_LEFT);
+		}
+		echo PHP_EOL;
+		return;
+	    }
+	}
+	
+	/** inicia uma barra de progresso
+	 * @method void initProgressBar(int $steps) inicia uma barra de progresso e carrega a primeira etapa dela
+	 * @param int $steps N&Atilde;&ordm;mero total de etapas da barra de progresso
+	 * @return void Nenhum retorno
+	 * @since 1.1
+	 */
+	public function initProgressBar($steps){
+	    if($steps == 0){
+		trigger_error('Etapas da barra de progresso s&Atilde;&pound;o inv&Atilde;&iexcl;lidas.', E_USER_ERROR);
+		return;
+	    }
+	    $this-&gt;steps = $steps;
+	    
+	    $this-&gt;runProgressBar();
+	    return;
+	}
+	
+	/** Executa uma etapa da &Atilde;&ordm;ltima barra de progresso
+	 * @method void runProgressBar() Executa uma etapa da &Atilde;&ordm;ltima barra de progresso
+	 * @return void Nada &Atilde;&copy; retornado
+	 * @since 1.1
+	 */
+	public function runProgressBar(){
+	    $percent = floor($this-&gt;getCols() / $this-&gt;steps);
+	    $module = $this-&gt;getCols() % $this-&gt;steps;
+	    if($this-&gt;laststep &lt; ($this-&gt;steps - 1)){
+		echo str_pad('', $percent, '|');
+		$this-&gt;laststep++;
+		return;
+	    }elseif($this-&gt;laststep &lt; $this-&gt;steps){
+		$percent = $percent + $module;
+		echo str_pad('', $percent, '|');
+		$this-&gt;laststep = 0;
+		$this-&gt;steps = 0;
+		echo PHP_EOL;
+		return;
+	    }
+	}
+	
+	/** Emula um prompt de comando retornando o resultado digitado pelo usu&Atilde;&iexcl;rio.
+	 * @method string prompt(string $prompt) Emula um prompt de comando retornando o resultado digitado pelo usu&Atilde;&iexcl;rio.
+	 * @param string $prompt [Opcional] Texto do prompt. O padr&Atilde;&pound;o &Atilde;&copy; [diret&Atilde;&sup3;rio atual&gt; ].
+	 * @return string Retorna uma string contendo o que foi digitado pelo usu&Atilde;&iexcl;rio.
+	 * @since 1.1
+	 */
+	public function prompt($prompt = ''){
+	    if(strlen($prompt) == 0){
+		$prompt = getcwd().'&gt;';
+	    }
+	    echo &quot;$prompt &quot;;
+	    $stdin = fgets(STDIN);
+	    
+	    return rtrim($stdin, PHP_EOL);
+	}
+}
+
+?&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

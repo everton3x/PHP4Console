@@ -1,0 +1,839 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Php4Console</title><meta xmlns="" http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link xmlns="" rel="stylesheet" href="../css/template.css" type="text/css">
+<script xmlns="" type="text/javascript" src="../js/jquery-1.4.2.min.js"></script><script xmlns="" type="text/javascript" src="../js/jquery.tools.min.js"></script><script xmlns="" type="text/javascript" src="../js/jquery-ui-1.8.2.custom.min.js"></script><script xmlns="" type="text/javascript" src="../js/template.js"></script></head><body><div xmlns="" id="content">
+<h1 xmlns:dbx="http://phpdoc.org/xsl/functions" class="file">php4console.class.php<a href="../source/php4console.class.php.html"><img src="../images/icons/view_source.png" border="0"></a>
+</h1>
+<div xmlns:dbx="http://phpdoc.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="../images/icons/visibility_public.png" id="show-public"><img src="../images/icons/visibility_protected.png" id="show-protected"><img src="../images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
+<a href="#classes"><img src="../images/icons/class.png" height="14">
+                          Classes
+                      </a><ul><li><a href="#%5CPhp4Console">\Php4Console</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://phpdoc.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
+<p xmlns:dbx="http://phpdoc.org/xsl/functions" class="short-description">Arquivo da classe Php4Console</p>
+<div xmlns:dbx="http://phpdoc.org/xsl/functions" class="long-description"></div>
+</div>
+<dl class="file-info">
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Author</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">Everton da Rosa everton3x@gmail.com
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Example</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">teste.php
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Filesource</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">License</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">gpl-3.0.txt GPL v3.0
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Package</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">Text4Shell
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Since</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">1.0
+         
+    </dd>
+<dt xmlns:dbx="http://phpdoc.org/xsl/functions">Version</dt>
+<dd xmlns:dbx="http://phpdoc.org/xsl/functions">1.1
+         
+    </dd>
+</dl>
+<a name="classes" class="anchor"></a><a xmlns:dbx="http://phpdoc.org/xsl/functions" id="\Php4Console" class="anchor"></a><h2 xmlns:dbx="http://phpdoc.org/xsl/functions" class="class">\Php4Console<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div xmlns:dbx="http://phpdoc.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Php4Console</small><p class="short-description">Classe para exibição de texto em ambiente Console (modo texto)
+A classe Php4Console possibilita ao desenvolvedor uma maneira fácil e elegante de exibir conteúdo em modo texto.</p>
+<div class="long-description"><p>Se você utiliza o PHP CLI (PHP Command Line Interface), Php4Console é a solução ideal para exibir conteúdo.</p></div>
+<dl class="class-info">
+<dt>Children</dt>
+<dd><a href="../files/text4shell.class.html#%5CText4Shell">\Text4Shell</a></dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+<h3>Properties</h3>
+<div>
+<a id="\Php4Console::$cols" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/property.png" alt="Property"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">int <span class="highlight">$cols</span> = </code><div class="description">
+<p class="short-description">Número de colunas do Console</p>&lt;p&gt;Número de colunas do Console&lt;/p&gt;</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>int</dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::$laststep" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/property.png" alt="Property"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">int <span class="highlight">$laststep</span> = </code><div class="description">
+<p class="short-description">Número da última etapa iniciada na barra de progresso</p>&lt;p&gt;Número da última etapa iniciada na barra de progresso&lt;/p&gt;</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>int</dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::$stepindicator" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/property.png" alt="Property"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string <span class="highlight">$stepindicator</span> = '  -&gt;'</code><div class="description">
+<p class="short-description">Início da linha de etapas do método openLoadStepLine</p>&lt;p&gt;Início da linha de etapas do método openLoadStepLine&lt;/p&gt;
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>'  -&gt;'</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::$steps" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/property.png" alt="Property"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\ind <span class="highlight">$steps</span> = </code><div class="description">
+<p class="short-description">Número de etapas da última barra de progresso iniciada</p>&lt;p&gt;Número de etapas da última barra de progrsso inicada&lt;/p&gt;</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>\ind</dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::$strlen" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/property.png" alt="Property"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">int <span class="highlight">$strlen</span> = </code><div class="description">
+<p class="short-description">Tamanho da última string usada nos métodos de carregamento</p>&lt;p&gt;tamanho da última string utilizada nos métodos de carregamento.&lt;/p&gt;
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>int</dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Php4Console::__construct()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(int $cols)</span> : object</code><div class="description"><p class="short_description">Construtor da classe</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$cols</th>
+<td>int</td>
+<td><em><p>Número de colunas do Console. O valor informado aqui ficará armazenado em Php4Console::cols.</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>object</td>
+<td>Retorna um objeto que representa a classe</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Construtor da classe
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::box()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">box</span><span class="nb-faded-text">(string $text, string $title = '', string $align = '')</span> : string</code><div class="description"><p class="short_description">Quebra um texto em linhas e coloca dentro de um Box.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$text</th>
+<td>string</td>
+<td><em><p>O texto a ser exibido</p></em></td>
+</tr>
+<tr>
+<th>$title</th>
+<td>string</td>
+<td><em><p>[Opcional] Se definido, exibe um título para a caixa.</p>
+</em></td>
+</tr>
+<tr>
+<th>$align</th>
+<td>string</td>
+<td><em><p>[Opcional] O alinhamento do texto do box. O padrão é LEFT, porém aceita RIGHT e CENTER (maipusculas ou minúsculas).</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>O Box com o texto quebrado em linhas;</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Quebra um texto em linhas de acordo com o número de colunas em Php4Console::cols e coloca dentro de um Box.
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::closeLoadGroupLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">closeLoadGroupLine</span><span class="nb-faded-text">(string $str, bool $success = true)</span> : void</code><div class="description"><p class="short_description">Termina um grupo de linhas de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$str</th>
+<td>string</td>
+<td><em><p>Uma mensagem para ser exibida ao final</p></em></td>
+</tr>
+<tr>
+<th>$success</th>
+<td>bool</td>
+<td><em><p>[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]</p>
+</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Fecha um grupo linhas de carregamento aberto por openLoadGroupLine()
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::closeLoadLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">closeLoadLine</span><span class="nb-faded-text">(bool $success = true)</span> : void</code><div class="description"><p class="short_description">Termina uma linha de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$success</th>
+<td>bool</td>
+<td><em><p>[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]</p>
+</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Fecha a última linha de carregamento aberta por openLoadLine()
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::closeLoadStepLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">closeLoadStepLine</span><span class="nb-faded-text">(bool $success = true)</span> : void</code><div class="description"><p class="short_description">Termina uma linha de um grupo de linhas de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$success</th>
+<td>bool</td>
+<td><em><p>[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]</p>
+</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Fecha a última linha de um grupo de carregamento aberta por openLoadStepLine()
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::getAlign()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">getAlign</span><span class="nb-faded-text">(string $align)</span> : int</code><div class="description"><p class="short_description">Retorna a constante para alinhamento.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$align</th>
+<td>string</td>
+<td><em><p>Alinhamento desejado. Admite RIGHT LEFT e CENTER (mínusculas ou maiúsculas).</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>int</td>
+<td>Retorna o valor da constante STR_PAD_RIGHT, STR_PAD_LEFT OU STR_PAD_BOTH, para $align RIGHT, LEFT ou CENTER, respectivamente.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Retorna o valor da constante de alinhamento para ser utilizada com str_pad().
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::getCols()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getCols</span><span class="nb-faded-text">()</span> : int</code><div class="description"><p class="short_description">Getter do número de colunas</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>int</td>
+<td>Retorna o número de colunas.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Retorna o número de colunas armazenado em Php4Console::cols
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::hline()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">hline</span><span class="nb-faded-text">()</span> : string</code><div class="description"><p class="short_description">Cria uma linha divisória horizontal.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>Retorna a linha criada.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Método auxiliar que cria uma linha divisória horizontal.
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::initProgressBar()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">initProgressBar</span><span class="nb-faded-text">(int $steps)</span> : void</code><div class="description"><p class="short_description">inicia uma barra de progresso</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$steps</th>
+<td>int</td>
+<td><em><p>Número total de etapas da barra de progresso</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>inicia uma barra de progresso e carrega a primeira etapa dela
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::openLoadGroupLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">openLoadGroupLine</span><span class="nb-faded-text">(string $str)</span> : void</code><div class="description"><p class="short_description">Inicia um grupo de linhas de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$str</th>
+<td>string</td>
+<td><em><p>Uma mensagem da linha de início do grupo</p>
+</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Inicia um grupo de linhas de carregamento
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::openLoadLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">openLoadLine</span><span class="nb-faded-text">(string $str)</span> : void</code><div class="description"><p class="short_description">Inicia a exibição de uma linha de log de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$str</th>
+<td>string</td>
+<td><em><p>A mensagem de carregamento</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>inicia a exibição de uma linha de carregamento
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::openLoadStepLine()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">openLoadStepLine</span><span class="nb-faded-text">(string $str)</span> : void</code><div class="description"><p class="short_description">Inicia uma linha de um grupo de linhas de carregamento</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$str</th>
+<td>string</td>
+<td><em><p>O texto para ser exibido na linha</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Inicia uma linha de um grupo de linhas de carregamento
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::paragraph()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">paragraph</span><span class="nb-faded-text">(string $text, int $cols = 0, string $align = 'left')</span> : boolean | array</code><div class="description"><p class="short_description">Prepara o texto para a exibição</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$text</th>
+<td>string</td>
+<td><em><p>O texto a ser exibido</p></em></td>
+</tr>
+<tr>
+<th>$cols</th>
+<td>int</td>
+<td><em><p>Número de colunas de quada linha</p></em></td>
+</tr>
+<tr>
+<th>$align</th>
+<td>string</td>
+<td><em><p>Alinhamento do text. Aceita LEFT (padrão), RIGHT ou CENTER (mínuscula/maiúscula).</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>boolean | array</td>
+<td>Retorna FALSE em caso de falha ou um array contendo as linhas do texto.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Quebra o texto em linhas com o tamanho máximo do número de colunas especificado em $cols.
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::prompt()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">prompt</span><span class="nb-faded-text">(string $prompt = '')</span> : string</code><div class="description"><p class="short_description">Emula um prompt de comando retornando o resultado digitado pelo usuário.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$prompt</th>
+<td>string</td>
+<td><em><p>[Opcional] Texto do prompt. O padrão é [diretório atual> ].</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>Retorna uma string contendo o que foi digitado pelo usuário.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Emula um prompt de comando retornando o resultado digitado pelo usuário.
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::runProgressBar()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">runProgressBar</span><span class="nb-faded-text">()</span> : void</code><div class="description"><p class="short_description">Executa uma etapa da última barra de progresso</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Executa uma etapa da última barra de progresso
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.1
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::setCols()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setCols</span><span class="nb-faded-text">(int $cols)</span> : boolean</code><div class="description"><p class="short_description">Setter do número de colunas</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$cols</th>
+<td>int</td>
+<td><em><p>Número de colunas</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>boolean</td>
+<td>Retorna TRUE em caso de sucesso ou FALSE em caso de falha.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Define o número de colunas que a classe utilizará para criação das telas
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::table()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">table</span><span class="nb-faded-text">(array $data, array $colmodel, string $title = '')</span> : string</code><div class="description"><p class="short_description">Cria uma tabela com os dados recebidos.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$data</th>
+<td>array</td>
+<td><em><p>Um array multidimensional com os dados de linhas e colunas par exibir.</p></em></td>
+</tr>
+<tr>
+<th>$colmodel</th>
+<td>array</td>
+<td><em><p>Um array especificando os rótulos das colunas, a largura de cada coluna e o alinhamento de cada coluna. Observe que a soma das larguras das colunas deve ser igual ao valor de Php4Console::cols. Se um rótulo não for especificado, o id da coluna será utilizado. Os alinhamentos válidos são LEFT, RIGHT e CENTER (em maiúsculas ou minúsculas). Se nenhum for especificado, LEFT é adotado. O array segue a estrutura: array( 'campo1' => array('label' => 'Rótulo', 'len' => 10, 'align' => 'LEFT'), 'campo2' => array([...]), [...])</p>
+</em></td>
+</tr>
+<tr>
+<th>$title</th>
+<td>string</td>
+<td><em><p>[Opcional] Se definido, mostra o texto com título da tabela.</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>Retorna a tabela criada.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Cria uma tabela os dados contidos em $data. $data precisa estar no formato:
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::tblline()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">tblline</span><span class="nb-faded-text">(array $colmodel)</span> : string</code><div class="description"><p class="short_description">Cria uma linha divisória horizontal para tabelas.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$colmodel</th>
+<td>array</td>
+<td><em><p>O modelo de coluna da tabela.</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>Retorna a linha criada.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Método auxiliar que cria uma linha divisória horizontal para tabela.
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Php4Console::write()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="../images/icons/arrow_right.png"><img src="../images/icons/arrow_down.png" style="display: none;"></a><code class="title"><img src="../images/icons/method.png" alt="method" title="method"><img src="../images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">write</span><span class="nb-faded-text">(string $text, string $align = '')</span> : string</code><div class="description"><p class="short_description">Quebra um texto em linhas.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$text</th>
+<td>string</td>
+<td><em><p>O texto a ser escrito.</p></em></td>
+</tr>
+<tr>
+<th>$align</th>
+<td>string</td>
+<td><em><p>[Opcional] O alinhamento do texto. O padrão é LEFT, porém aceita RIGHT e CENTER (maipusculas ou minúsculas).</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>Texto quebrado em linhas.</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Method</dt>
+<dd>Quebra um texto em linhas de acordo com o número de colunas em Php4Console::cols.
+         
+    </dd>
+<dt>Since</dt>
+<dd>1.0
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">
+            Documentation was generated by
+            <a href="http://phpdoc.org">phpDocumentor
+                2.0.0a8</a>.
+        </small></body></html>

@@ -1,0 +1,18 @@
+README file
+
+Php4Console
+Versão 1.1
+
+Php4Console é uma classe para facilitar a utilização do PHP em modo texto (CLI).
+
+Para utilizá-la, você precisa apenas do PHP CLI funcionando (Se nãos abe o que é isso, leia o manual do PHP).
+
+Você vai precisar de um servidor web com suporte ao PHP (Apache, por exemplo) apenas para ler a documentação da classe gerada pelo Phpdocumentor. Para isso, acesse o diretório doc pelo navegador.
+
+Se preferir, leia os comentários nos arquivos. Nele está toda a documentação do projeto.
+
+Para usar o Php4Console, faça um include() do arquivo php4console.class.php e crie uma instância da classe Php4Console.
+
+O arquivo text4shell.class.php serve apenas para matner a compatibilidade do seu código com a versão 1.0, chamada Text4Shell. Se você não está migrando, não vai precissar desse arquivo.
+
+Para testar exemplos, execute exemplo.bat e siga as instruções (desculpe, não criei um shell-script para Linux pois não tenho Linux instalado. Se você quiser utilizar esta classe no Linux, não se preocupe, ela funciona sim.).

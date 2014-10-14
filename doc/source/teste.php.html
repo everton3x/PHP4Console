@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+require 'php4console.class.php';
+
+$Php4Console = new Php4Console(77);
+
+/*$title = 'Isto &eacute; um teste';
+$text = 'PHP, que significa &quot;PHP: Hypertext Preprocessor&quot;, &eacute; uma linguagem de programa&ccedil;&atilde;o de ampla utiliza&ccedil;&atilde;o, interpretada, que &eacute; especialmente interessante para desenvolvimento para a Web e pode ser mesclada dentro do c&oacute;digo HTML. A sintaxe da linguagem lembra C, Java e Perl, e &eacute; f&aacute;cil de aprender. O objetivo principal da linguagem &eacute; permitir a desenvolvedores escreverem p&aacute;ginas que ser&atilde;o geradas dinamicamente rapidamente, mas voc&ecirc; pode fazer muito mais do que isso com PHP.';
+$data = array(
+    array(
+        'valor' =&gt; '1'
+        ,'constante' =&gt; 'E_ERROR'
+        ,'descricao' =&gt; 'Erros fatais em tempo de execu&ccedil;&atilde;o. Estes indicam erros que n&atilde;o podem ser recuperados, como problemas de aloca&ccedil;&atilde;o de mem&oacute;ria. A execu&ccedil;&atilde;o do script &eacute; interrompida.'
+        ,'nota' =&gt; ''
+    )
+    ,array(
+        'valor' =&gt; '2'
+        ,'constante' =&gt; 'E_WARNING'
+        ,'descricao' =&gt; 'Avisos em tempo de execu&ccedil;&atilde;o (erros n&atilde;o fatais). A execu&ccedil;&atilde;o do script n&atilde;o &eacute; interrompida. '
+        ,'nota' =&gt; ''
+    )
+    ,array(
+        'valor' =&gt; '4'
+        ,'constante' =&gt; 'E_PARSE'
+        ,'descricao' =&gt; 'Erro em tempo de compila&ccedil;&atilde;o. Erros gerados pelo interpretador.'
+        ,'nota' =&gt; ''
+    )
+    ,array(
+        'valor' =&gt; '8'
+        ,'constante' =&gt; 'E_NOTICE'
+        ,'descricao' =&gt; 'Not&iacute;cia em tempo de execu&ccedil;&atilde;o. Indica que o script encontrou alguma coisa que pode indicar um erro, mas que tamb&eacute;m possa acontecer durante a execu&ccedil;&atilde;o normal do script.'
+        ,'nota' =&gt; 'Isto &eacute; um exemplo'
+    )
+);
+
+$colmodel = array(
+    'valor' =&gt; array(
+        'label' =&gt; 'Valor'
+        ,'len' =&gt; '7'
+        ,'align' =&gt; 'RIGHT'
+    )
+    ,'constante' =&gt; array(
+        'label' =&gt; 'Constante'
+        ,'len' =&gt; '10'
+        ,'align' =&gt; 'CENTER'
+    )
+    ,'descricao' =&gt; array(
+        'label' =&gt; 'Descri&ccedil;&atilde;o'
+        ,'len' =&gt; '20'
+    )
+    ,'nota' =&gt; array(
+        'len' =&gt; '13'
+    )
+);
+
+echo $Php4Console-&gt;write($text);//escreve um texto na tela
+
+echo $Php4Console-&gt;box($text);//escreve o texto num quadro
+
+echo $Php4Console-&gt;box($text, $title);//escreve o texto num quadro com um t&iacute;tulo
+
+echo $Php4Console-&gt;table($data, $colmodel);//escreve uma tabela
+
+echo $Php4Console-&gt;table($data, $colmodel, $title);//escreve uma tabela com t&iacute;tulo
+*/
+
+/*$Php4Console-&gt;openLoadLine('Iniciando carregamento de alguma coisa');
+sleep(3);
+$Php4Console-&gt;closeLoadLine();
+
+$Php4Console-&gt;openLoadLine('Carregando alguma coisa que ir&aacute; falhar');
+sleep(3);
+$Php4Console-&gt;closeLoadLine(false);
+
+$Php4Console-&gt;openLoadGroupLine('Iniciando um grupo de linhas');
+$Php4Console-&gt;openLoadStepLine('Esta &eacute; uma etapa do carregamento');
+sleep(3);
+$Php4Console-&gt;closeLoadStepLine();
+$Php4Console-&gt;openLoadStepLine('Esta &eacute; uma etapa do carregamento que falha');
+sleep(3);
+$Php4Console-&gt;closeLoadStepLine(false);
+$Php4Console-&gt;closeLoadGroupLine('Todas etapas prontas', false);
+
+$Php4Console-&gt;initProgressBar(3);
+sleep(3);
+$Php4Console-&gt;runProgressBar();
+sleep(3);
+$Php4Console-&gt;runProgressBar();*/
+
+//echo $Php4Console-&gt;prompt();
+echo $Php4Console-&gt;prompt('Prompt#');
+?&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all()
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

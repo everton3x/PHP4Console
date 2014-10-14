@@ -1,0 +1,27 @@
+CHANGELOG
+
+VERSION 1.1
+* Adicionado arquivo CHANGELOG
+* Adicionada documentação via PhpDocumentor2
+* Adicionado parâmetro $align no método box()
+* Método paragraph() corrigido para trabalhar com parâmetro $align
+* Método write() atualizado para trabalhar com $align
+* Nome da classe alterado para Php4Console.
+* Alteração dos nomes de métodos de underline_splited para CammelCase. Arquivo principal da classe renomeado para php4console.class.php. Arquivo text4shell.class.php mantido com nomes de classe e métodos antigos para compatibilidade.
+* Inclusão dos métodos openLoadLine(), closeLoadLine(), openLoadStepLine(), closeLoadStepLine(), closeLoadGroupLine(), initProgressBar() e runProgressBar().
+* Inclusão do método prompt().
+* Criada interface de exemplos.
+
+
+VERSION 1.0
+* $cols
+* __construct()
+* set_cols()
+* get_cols
+* paragraph()
+* write()
+* box()
+* table()
+* get_align()
+* tblline()
+* hline()

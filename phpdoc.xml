@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdoc>
+    <title>Php4Console</title>
+    <parser>
+        <target>e:\www\dev\PHP4Console\doc</target>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+        <visibility></visibility>
+    </parser>
+    <transformer>
+        <target>e:\www\dev\PHP4Console\doc</target>
+    </transformer>
+    <logging>
+        <level>warn</level>
+        <paths>
+            <default>{APP_ROOT}/{DATE}.log</default>
+            <errors>{APP_ROOT}/{DATE}.errors.log</errors>
+        </paths>
+    </logging>
+    <transformations>
+        <template name="abstract" />
+    </transformations>
+    <files>
+        <file>e:\www\dev\PHP4Console\*.class.php</file>
+    </files>
+    
+</phpdoc>

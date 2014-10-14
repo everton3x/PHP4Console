@@ -1,0 +1,383 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Text4Shell » \Text4Shell</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Text4Shell</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Text4Shell.html"><i class="icon-folder-open"></i> Text4Shell</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Construtor da classe"><span class="description">Construtor da classe</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#box" title="box :: Quebra um texto em linhas e coloca dentro de um Box."><span class="description">Quebra um texto em linhas e coloca dentro de um Box.</span><pre>box()</pre></a></li>
+<li class="method public "><a href="#get_cols" title="get_cols :: Getter do número de colunas"><span class="description">Getter do número de colunas</span><pre>get_cols()</pre></a></li>
+<li class="method public "><a href="#set_cols" title="set_cols :: Setter do número de colunas"><span class="description">Setter do número de colunas</span><pre>set_cols()</pre></a></li>
+<li class="method public "><a href="#table" title="table :: Cria uma tabela com os dados recebidos."><span class="description">Cria uma tabela com os dados recebidos.</span><pre>table()</pre></a></li>
+<li class="method public "><a href="#write" title="write :: Quebra um texto em linhas."><span class="description">Quebra um texto em linhas.</span><pre>write()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#get_align" title="get_align :: Retorna a constante para alinhamento."><span class="description">Retorna a constante para alinhamento.</span><pre>get_align()</pre></a></li>
+<li class="method protected "><a href="#hline" title="hline :: Cria uma linha divisória horizontal."><span class="description">Cria uma linha divisória horizontal.</span><pre>hline()</pre></a></li>
+<li class="method protected "><a href="#paragraph" title="paragraph :: Prepara o texto para a exibição"><span class="description">Prepara o texto para a exibição</span><pre>paragraph()</pre></a></li>
+<li class="method protected "><a href="#tblline" title="tblline :: Cria uma linha divisória horizontal para tabelas."><span class="description">Cria uma linha divisória horizontal para tabelas.</span><pre>tblline()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24cols" title="$cols :: Número de colunas do Shell"><span class="description">Número de colunas do Shell</span><pre>$cols</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CText4Shell" id="\Text4Shell"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Text4Shell.html">Text4Shell</a>
+</li>
+</ul>
+<div href="../classes/Text4Shell.html" class="element class">
+<p class="short_description">Classe para exibição de texto em ambiente Shell (modo texto)
+A classe Text4Shell possibilita ao desenvolvedor uma maneira fácil e elegante de exibir conteúdo em ambiente Shell.</p>
+<div class="details">
+<p class="long_description"><p>Se você utiliza o PHP CLI (PHP Command Line Interface), Text4Shell é a solução ideal para exibir conteúdo.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Text4Shell.html">Text4Shell</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Construtor da classe</h2>
+<pre>__construct(int $cols) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Construtor da classe</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cols</h4>
+<code>int</code><p>Número de colunas do Shell. O valor informado aqui ficará armazenado em Text4Shell::cols.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>Text4Shell Retorna um objeto que representa a classe</div>
+</div></div>
+</div>
+<a name="box" id="box"></a><div class="element clickable method public box" data-toggle="collapse" data-target=".box .collapse">
+<h2>Quebra um texto em linhas e coloca dentro de um Box.</h2>
+<pre>box(string $text, string $title) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Quebra um texto em linhas de acordo com o número de colunas em Text4Shell::cols e coloca dentro de um Box.</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>O texto a ser exibido</p></div>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code><p>[Opcional] Se definido, exibe um título para a caixa.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>O Box com o texto quebrado em linhas;</div>
+</div></div>
+</div>
+<a name="get_cols" id="get_cols"></a><div class="element clickable method public get_cols" data-toggle="collapse" data-target=".get_cols .collapse">
+<h2>Getter do número de colunas</h2>
+<pre>get_cols() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Retorna o número de colunas armazenado em Text4shell::cols</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>Retorna o número de colunas.</div>
+</div></div>
+</div>
+<a name="set_cols" id="set_cols"></a><div class="element clickable method public set_cols" data-toggle="collapse" data-target=".set_cols .collapse">
+<h2>Setter do número de colunas</h2>
+<pre>set_cols(int $cols) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Define o número de colunas que a classe utilizará para criação das telas</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cols</h4>
+<code>int</code><p>Número de colunas</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Retorna TRUE em caso de sucesso ou FALSE em caso de falha.</div>
+</div></div>
+</div>
+<a name="table" id="table"></a><div class="element clickable method public table" data-toggle="collapse" data-target=".table .collapse">
+<h2>Cria uma tabela com os dados recebidos.</h2>
+<pre>table(array $data, array $colmodel, string $title) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Cria uma tabela os dados contidos em $data. $data precisa estar no formato:</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Um array multidimensional com os dados de linhas e colunas par exibir.</p></div>
+<div class="subelement argument">
+<h4>$colmodel</h4>
+<code>array</code><p>Um array especificando os rótulos das colunas, a largura de cada coluna e o alinhamento de cada coluna. Observe que a soma das larguras das colunas deve ser igual ao valor de Text4Shell::cols. Se um rótulo não for especificado, o id da coluna será utilizado. Os alinhamentos válidos são LEFT, RIGHT e CENTER (em maiúsculas ou minúsculas). Se nenhum for especificado, LEFT é adotado. O array segue a estrutura: array( 'campo1' => array('label' => 'Rótulo', 'len' => 10, 'align' => 'LEFT'), 'campo2' => array([...]), [...])</p>
+</div>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code><p>[Opcional] Se definido, mostra o texto com título da tabela.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Retorna a tabela criada.</div>
+</div></div>
+</div>
+<a name="write" id="write"></a><div class="element clickable method public write" data-toggle="collapse" data-target=".write .collapse">
+<h2>Quebra um texto em linhas.</h2>
+<pre>write(string $text) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Quebra um texto em linhas de acordo com o número de colunas em Text4Shell::cols.</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>O texto a ser escrito.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Texto quebrado em linhas.</div>
+</div></div>
+</div>
+<a name="get_align" id="get_align"></a><div class="element clickable method protected get_align" data-toggle="collapse" data-target=".get_align .collapse">
+<h2>Retorna a constante para alinhamento.</h2>
+<pre>get_align(string $align) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Retorna o valor da constante de alinhamento para ser utilizada com str_pad().</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$align</h4>
+<code>string</code><p>Alinhamento desejado. Admite RIGHT LEFT e CENTER (mínusculas ou maiúsculas).</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>Retorna o valor da constante STR_PAD_RIGHT, STR_PAD_LEFT OU STR_PAD_BOTH, para $align RIGHT, LEFT ou CENTER, respectivamente.</div>
+</div></div>
+</div>
+<a name="hline" id="hline"></a><div class="element clickable method protected hline" data-toggle="collapse" data-target=".hline .collapse">
+<h2>Cria uma linha divisória horizontal.</h2>
+<pre>hline() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>method</th>
+<td>Método auxiliar que cria uma linha divisória horizontal.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Retorna a linha criada.</div>
+</div></div>
+</div>
+<a name="paragraph" id="paragraph"></a><div class="element clickable method protected paragraph" data-toggle="collapse" data-target=".paragraph .collapse">
+<h2>Prepara o texto para a exibição</h2>
+<pre>paragraph(string $text, int $cols, string $align) : boolean | array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Quebra o texto em linhas com o tamanho máximo do número de colunas especificado em $cols.</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>O texto a ser exibido</p></div>
+<div class="subelement argument">
+<h4>$cols</h4>
+<code>int</code><p>Número de colunas de quada linha</p></div>
+<div class="subelement argument">
+<h4>$align</h4>
+<code>string</code><p>Alinhamento do text. Aceita LEFT (padrão), RIGHT ou CENTER (mínuscula/maiúscula).</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>array</code>Retorna FALSE em caso de falha ou um array contendo as linhas do texto.</div>
+</div></div>
+</div>
+<a name="tblline" id="tblline"></a><div class="element clickable method protected tblline" data-toggle="collapse" data-target=".tblline .collapse">
+<h2>Cria uma linha divisória horizontal para tabelas.</h2>
+<pre>tblline(array $colmodel) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>method</th>
+<td>Método auxiliar que cria uma linha divisória horizontal para tabela.</td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$colmodel</h4>
+<code>array</code><p>O modelo de coluna da tabela.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Retorna a linha criada.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24cols" id="$cols"> </a><div class="element clickable property protected $cols" data-toggle="collapse" data-target=".$cols .collapse">
+<h2>Número de colunas do Shell</h2>
+<pre>$cols : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-08-14T11:04:51-03:00.<br></footer></div>
+</div>
+</body>
+</html>

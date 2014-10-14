@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a8" title="Php4Console">
+  <file path="php4console.class.php" hash="91382a90965edd38703b36d8ba9634fd" package="Text4Shell">
+    <docblock line="3">
+      <description><![CDATA[Arquivo da classe Php4Console]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Everton da Rosa everton3x@gmail.com"/>
+      <tag line="3" name="version" description="1.1"/>
+      <tag line="3" name="license" description="gpl-3.0.txt GPL v3.0"/>
+      <tag line="3" name="filesource" description=""/>
+      <tag line="3" name="package" description="Text4Shell"/>
+      <tag line="3" name="since" description="1.0"/>
+      <tag line="3" name="example" description="teste.php"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="22" package="Php4Console">
+      <extends/>
+      <name>Php4Console</name>
+      <full_name>\Php4Console</full_name>
+      <docblock line="14">
+        <description><![CDATA[Classe para exibição de texto em ambiente Console (modo texto)
+A classe Php4Console possibilita ao desenvolvedor uma maneira fácil e elegante de exibir conteúdo em modo texto.]]></description>
+        <long-description><![CDATA[<p>Se você utiliza o PHP CLI (PHP Command Line Interface), Php4Console é a solução ideal para exibir conteúdo.</p>]]></long-description>
+        <tag line="14" name="package" description="Php4Console"/>
+        <tag line="14" name="since" description="1.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Php4Console">
+        <name>$cols</name>
+        <default><![CDATA[]]></default>
+        <docblock line="23">
+          <description><![CDATA[Número de colunas do Console]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="Número de colunas do Console" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="23" name="since" description="1.0"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" namespace="global" package="Php4Console">
+        <name>$strlen</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Tamanho da última string usada nos métodos de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="tamanho da última string utilizada nos métodos de carregamento." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="29" name="since" description="1.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="39" namespace="global" package="Php4Console">
+        <name>$stepindicator</name>
+        <default><![CDATA['  ->']]></default>
+        <docblock line="35">
+          <description><![CDATA[Início da linha de etapas do método openLoadStepLine]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="var" description="Início da linha de etapas do método openLoadStepLine" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="35" name="since" description="1.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45" namespace="global" package="Php4Console">
+        <name>$steps</name>
+        <default><![CDATA[]]></default>
+        <docblock line="41">
+          <description><![CDATA[Número de etapas da última barra de progresso iniciada]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="var" description="Número de etapas da última barra de progrsso inicada" type="\ind">
+            <type by_reference="false">\ind</type>
+          </tag>
+          <tag line="41" name="since" description="1.1"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="51" namespace="global" package="Php4Console">
+        <name>$laststep</name>
+        <default><![CDATA[]]></default>
+        <docblock line="47">
+          <description><![CDATA[Número da última etapa iniciada na barra de progresso]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="var" description="Número da última etapa iniciada na barra de progresso" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="47" name="since" description="1.1"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="Php4Console">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="53">
+          <description><![CDATA[Construtor da classe]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="method" description="Construtor da classe" type="void" method_name="__construct">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$cols</name>
+              <default/>
+              <type>int</type>
+            </argument>
+          </tag>
+          <tag line="53" name="param" description="Número de colunas do Console. O valor informado aqui ficará armazenado em Php4Console::cols." type="int" variable="$cols">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="53" name="return" description="Retorna um objeto que representa a classe" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="53" name="since" description="1.0"/>
+        </docblock>
+        <argument line="60">
+          <name>$cols</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="Php4Console">
+        <name>setCols</name>
+        <full_name>setCols</full_name>
+        <docblock line="65">
+          <description><![CDATA[Setter do número de colunas]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="method" description="Define o número de colunas que a classe utilizará para criação das telas" type="void" method_name="setCols">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$cols</name>
+              <default/>
+              <type>int</type>
+            </argument>
+          </tag>
+          <tag line="65" name="param" description="Número de colunas" type="int" variable="$cols">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="65" name="return" description="Retorna TRUE em caso de sucesso ou FALSE em caso de falha." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="65" name="since" description="1.0"/>
+        </docblock>
+        <argument line="73">
+          <name>$cols</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="89" package="Php4Console">
+        <name>getCols</name>
+        <full_name>getCols</full_name>
+        <docblock line="83">
+          <description><![CDATA[Getter do número de colunas]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="method" description="Retorna o número de colunas armazenado em Php4Console::cols" type="void" method_name="getCols">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="83" name="return" description="Retorna o número de colunas." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="83" name="since" description="1.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="102" package="Php4Console">
+        <name>paragraph</name>
+        <full_name>paragraph</full_name>
+        <docblock line="93">
+          <description><![CDATA[Prepara o texto para a exibição]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="method" description="Quebra o texto em linhas com o tamanho máximo do número de colunas especificado em $cols." type="void" method_name="paragraph">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$text</name>
+              <default/>
+              <type>string</type>
+            </argument>
+            <argument>
+              <name>$cols</name>
+              <default/>
+              <type>int</type>
+            </argument>
+          </tag>
+          <tag line="93" name="param" description="O texto a ser exibido" type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="param" description="Número de colunas de quada linha" type="int" variable="$cols">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="93" name="param" description="Alinhamento do text. Aceita LEFT (padrão), RIGHT ou CENTER (mínuscula/maiúscula)." type="string" variable="$align">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="return" description="Retorna FALSE em caso de falha ou um array contendo as linhas do texto." type="boolean|array">
+            <type by_reference="false">boolean</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="93" name="since" description="1.0"/>
+        </docblock>
+        <argument line="102">
+          <name>$text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="102">
+          <name>$cols</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="102">
+          <name>$align</name>
+          <default><![CDATA['left']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="130" package="Php4Console">
+        <name>write</name>
+        <full_name>write</full_name>
+        <docblock line="122">
+          <description><![CDATA[Quebra um texto em linhas.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="122" name="method" description="Quebra um texto em linhas de acordo com o número de colunas em Php4Console::cols." type="void" method_name="write">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$text</name>
+              <default/>
+              <type>string</type>
+            </argument>
+            <argument>
+              <name>$align</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="122" name="param" description="O texto a ser escrito." type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="122" name="param" description="[Opcional] O alinhamento do texto. O padrão é LEFT, porém aceita RIGHT e CENTER (maipusculas ou minúsculas)." type="string" variable="$align">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="122" name="return" description="Texto quebrado em linhas." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="122" name="since" description="1.0"/>
+        </docblock>
+        <argument line="130">
+          <name>$text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$align</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="150" package="Php4Console">
+        <name>box</name>
+        <full_name>box</full_name>
+        <docblock line="141">
+          <description><![CDATA[Quebra um texto em linhas e coloca dentro de um Box.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="141" name="method" description="Quebra um texto em linhas de acordo com o número de colunas em Php4Console::cols e coloca dentro de um Box." type="void" method_name="box">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$box</name>
+              <default/>
+              <type>string</type>
+            </argument>
+            <argument>
+              <name>$title</name>
+              <default/>
+              <type>string</type>
+            </argument>
+            <argument>
+              <name>$align</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="141" name="param" description="O texto a ser exibido" type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="141" name="param" description="[Opcional] Se definido, exibe um título para a caixa." type="string" variable="$title">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="141" name="param" description="[Opcional] O alinhamento do texto do box. O padrão é LEFT, porém aceita RIGHT e CENTER (maipusculas ou minúsculas)." type="string" variable="$align">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="141" name="return" description="O Box com o texto quebrado em linhas;" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="141" name="since" description="1.0"/>
+        </docblock>
+        <argument line="150">
+          <name>$text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="150">
+          <name>$title</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+        <argument line="150">
+          <name>$align</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="178" package="Php4Console">
+        <name>hline</name>
+        <full_name>hline</full_name>
+        <docblock line="173">
+          <description><![CDATA[Cria uma linha divisória horizontal.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="173" name="method" description="Método auxiliar que cria uma linha divisória horizontal." type="void" method_name="hline">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="173" name="return" description="Retorna a linha criada." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="194" package="Php4Console">
+        <name>tblline</name>
+        <full_name>tblline</full_name>
+        <docblock line="187">
+          <description><![CDATA[Cria uma linha divisória horizontal para tabelas.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="187" name="method" description="Método auxiliar que cria uma linha divisória horizontal para tabela." type="void" method_name="tblline">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="187" name="param" description="O modelo de coluna da tabela." type="array" variable="$colmodel">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="187" name="return" description="Retorna a linha criada." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="187" name="since" description="1.0"/>
+        </docblock>
+        <argument line="194">
+          <name>$colmodel</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="226" package="Php4Console">
+        <name>table</name>
+        <full_name>table</full_name>
+        <docblock line="212">
+          <description><![CDATA[Cria uma tabela com os dados recebidos.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="212" name="method" description="Cria uma tabela os dados contidos em $data. $data precisa estar no formato:" type="void" method_name="table">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$data</name>
+              <default/>
+              <type>array</type>
+            </argument>
+            <argument>
+              <name>$colmodel</name>
+              <default/>
+              <type>array</type>
+            </argument>
+            <argument>
+              <name>$title</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="212" name="param" description="Um array multidimensional com os dados de linhas e colunas par exibir." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="212" name="param" description="Um array especificando os rótulos das colunas, a largura de cada coluna e o alinhamento de cada coluna. Observe que a soma das larguras das colunas deve ser igual ao valor de Php4Console::cols. Se um rótulo não for especificado, o id da coluna será utilizado. Os alinhamentos válidos são LEFT, RIGHT e CENTER (em maiúsculas ou minúsculas). Se nenhum for especificado, LEFT é adotado. O array segue a estrutura: array( 'campo1' =&gt; array('label' =&gt; 'Rótulo', 'len' =&gt; 10, 'align' =&gt; 'LEFT'), 'campo2' =&gt; array([...]), [...])" type="array" variable="$colmodel">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="212" name="param" description="[Opcional] Se definido, mostra o texto com título da tabela." type="string" variable="$title">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="212" name="return" description="Retorna a tabela criada." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="212" name="since" description="1.0"/>
+        </docblock>
+        <argument line="226">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="226">
+          <name>$colmodel</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="226">
+          <name>$title</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="379" package="Php4Console">
+        <name>getAlign</name>
+        <full_name>getAlign</full_name>
+        <docblock line="372">
+          <description><![CDATA[Retorna a constante para alinhamento.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="372" name="method" description="Retorna o valor da constante de alinhamento para ser utilizada com str_pad()." type="int" method_name="getAlign">
+            <type by_reference="false">int</type>
+            <argument>
+              <name>$align</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="372" name="param" description="Alinhamento desejado. Admite RIGHT LEFT e CENTER (mínusculas ou maiúsculas)." type="string" variable="$align">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="372" name="return" description="Retorna o valor da constante STR_PAD_RIGHT, STR_PAD_LEFT OU STR_PAD_BOTH, para $align RIGHT, LEFT ou CENTER, respectivamente." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="372" name="since" description="1.0"/>
+        </docblock>
+        <argument line="379">
+          <name>$align</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="404" package="Php4Console">
+        <name>openLoadLine</name>
+        <full_name>openLoadLine</full_name>
+        <docblock line="397">
+          <description><![CDATA[Inicia a exibição de uma linha de log de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="397" name="method" description="inicia a exibição de uma linha de carregamento" type="void" method_name="openLoadLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$str</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="397" name="param" description="A mensagem de carregamento" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="397" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="397" name="since" description="1.1"/>
+        </docblock>
+        <argument line="404">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="424" package="Php4Console">
+        <name>closeLoadLine</name>
+        <full_name>closeLoadLine</full_name>
+        <docblock line="418">
+          <description><![CDATA[Termina uma linha de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="418" name="method" description="Fecha a última linha de carregamento aberta por openLoadLine()" type="void" method_name="closeLoadLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$success</name>
+              <default/>
+              <type>bool</type>
+            </argument>
+          </tag>
+          <tag line="418" name="param" description="[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]" type="bool" variable="$success">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="418" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="418" name="since" description="1.1"/>
+        </docblock>
+        <argument line="424">
+          <name>$success</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="441" package="Php4Console">
+        <name>openLoadGroupLine</name>
+        <full_name>openLoadGroupLine</full_name>
+        <docblock line="435">
+          <description><![CDATA[Inicia um grupo de linhas de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="435" name="method" description="Inicia um grupo de linhas de carregamento" type="void" method_name="openLoadGroupLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$str</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="435" name="param" description="Uma mensagem da linha de início do grupo" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="435" name="return" description="Nenhum retorno" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="435" name="since" description="1.1"/>
+        </docblock>
+        <argument line="441">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="460" package="Php4Console">
+        <name>openLoadStepLine</name>
+        <full_name>openLoadStepLine</full_name>
+        <docblock line="454">
+          <description><![CDATA[Inicia uma linha de um grupo de linhas de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="454" name="method" description="Inicia uma linha de um grupo de linhas de carregamento" type="void" method_name="openLoadStepLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$str</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="454" name="param" description="O texto para ser exibido na linha" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="454" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="454" name="since" description="1.1"/>
+        </docblock>
+        <argument line="460">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="481" package="Php4Console">
+        <name>closeLoadStepLine</name>
+        <full_name>closeLoadStepLine</full_name>
+        <docblock line="475">
+          <description><![CDATA[Termina uma linha de um grupo de linhas de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="475" name="method" description="Fecha a última linha de um grupo de carregamento aberta por openLoadStepLine()" type="void" method_name="closeLoadStepLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$success</name>
+              <default/>
+              <type>bool</type>
+            </argument>
+          </tag>
+          <tag line="475" name="param" description="[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]" type="bool" variable="$success">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="475" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="475" name="since" description="1.1"/>
+        </docblock>
+        <argument line="481">
+          <name>$success</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="499" package="Php4Console">
+        <name>closeLoadGroupLine</name>
+        <full_name>closeLoadGroupLine</full_name>
+        <docblock line="492">
+          <description><![CDATA[Termina um grupo de linhas de carregamento]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="492" name="method" description="Fecha um grupo linhas de carregamento aberto por openLoadGroupLine()" type="void" method_name="closeLoadGroupLine">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$str</name>
+              <default/>
+              <type>string</type>
+            </argument>
+            <argument>
+              <name>$success</name>
+              <default/>
+              <type>bool</type>
+            </argument>
+          </tag>
+          <tag line="492" name="param" description="Uma mensagem para ser exibida ao final" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="492" name="param" description="[Opcional] Se TRUE (padrão), a linha termina com [OK], senão, termina com[FAIL]" type="bool" variable="$success">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="492" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="492" name="since" description="1.1"/>
+        </docblock>
+        <argument line="499">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="499">
+          <name>$success</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="522" package="Php4Console">
+        <name>initProgressBar</name>
+        <full_name>initProgressBar</full_name>
+        <docblock line="516">
+          <description><![CDATA[inicia uma barra de progresso]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="516" name="method" description="inicia uma barra de progresso e carrega a primeira etapa dela" type="void" method_name="initProgressBar">
+            <type by_reference="false">void</type>
+            <argument>
+              <name>$steps</name>
+              <default/>
+              <type>int</type>
+            </argument>
+          </tag>
+          <tag line="516" name="param" description="Número total de etapas da barra de progresso" type="int" variable="$steps">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="516" name="return" description="Nenhum retorno" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="516" name="since" description="1.1"/>
+        </docblock>
+        <argument line="522">
+          <name>$steps</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="538" package="Php4Console">
+        <name>runProgressBar</name>
+        <full_name>runProgressBar</full_name>
+        <docblock line="533">
+          <description><![CDATA[Executa uma etapa da última barra de progresso]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="533" name="method" description="Executa uma etapa da última barra de progresso" type="void" method_name="runProgressBar">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="533" name="return" description="Nada é retornado" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="533" name="since" description="1.1"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="561" package="Php4Console">
+        <name>prompt</name>
+        <full_name>prompt</full_name>
+        <docblock line="555">
+          <description><![CDATA[Emula um prompt de comando retornando o resultado digitado pelo usuário.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="555" name="method" description="Emula um prompt de comando retornando o resultado digitado pelo usuário." type="string" method_name="prompt">
+            <type by_reference="false">string</type>
+            <argument>
+              <name>$prompt</name>
+              <default/>
+              <type>string</type>
+            </argument>
+          </tag>
+          <tag line="555" name="param" description="[Opcional] Texto do prompt. O padrão é [diretório atual&gt; ]." type="string" variable="$prompt">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="555" name="return" description="Retorna uma string contendo o que foi digitado pelo usuário." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="555" name="since" description="1.1"/>
+        </docblock>
+        <argument line="561">
+          <name>$prompt</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <file path="text4shell.class.php" hash="a326893244bdefcc631a0a4b1fa7314d" package="Php4Console">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="31" package="Php4Console">
+      <extends>\Php4Console</extends>
+      <name>Text4Shell</name>
+      <full_name>\Text4Shell</full_name>
+      <docblock line="20">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Php4Console">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="33">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+        <argument line="43">
+          <name>$cols</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="57" package="Php4Console">
+        <name>set_cols</name>
+        <full_name>set_cols</full_name>
+        <docblock line="48">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+        <argument line="57">
+          <name>$cols</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Php4Console">
+        <name>get_cols</name>
+        <full_name>get_cols</full_name>
+        <docblock line="61">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="82" package="Php4Console">
+        <name>get_align</name>
+        <full_name>get_align</full_name>
+        <docblock line="73">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+        <argument line="82">
+          <name>$align</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file text4shell.class.php</critical>
+      <critical line="20" code="50005">No short description for class \Text4Shell</critical>
+      <error line="33" code="50012">No short description for method __construct()</error>
+      <error line="33" code="50015">Argument $cols is missing from the Docblock of __construct()</error>
+      <error line="48" code="50012">No short description for method set_cols()</error>
+      <error line="48" code="50015">Argument $cols is missing from the Docblock of set_cols()</error>
+      <error line="61" code="50012">No short description for method get_cols()</error>
+      <error line="73" code="50012">No short description for method get_align()</error>
+      <error line="73" code="50015">Argument $align is missing from the Docblock of get_align()</error>
+    </parse_markers>
+    <source>eJy1Vk1v2zgQPTdA/sMcAtQOskq7ycldtPambrpA0ASOezZoaSyzFUmVH4aRov2v3T0seuhpbz3tkJQl2RZStNs1DEMkh/Px3puRf3tWLsvDg9Pj48MDOIaRfuf4SsGCvUUomWaQKlEyy+e84BnL0K+BwQq1+UvB4+RRuBZ+xsYisMqB1ewOnKD7BTMGWw4FkxY17Hv2zv/JeK4MvHMIgueaCcjawaKH1s7jJKa9CTPFtT2/XWJRAIJBZ0B8tiojl94+VdLwDDXzGxmWGlNmMQPZ9hguanrGdVq4L960OTeYO075J03ZQ+bsUmkYk4lV0ic8UYYBxvXZepgLxouEyo323hUnQ4oVNwqeoqTk87L45Sx5lNi1hcubK1idVfAOF7xAo5xOMa5Llr5lOcLNsjy/oKJUUR0YN9+cNVBUR1ymGAr8SL+/xs0WCFU6p4cHJIdTjcSjRnhI8jhPY4gkgJzQzsMnwaoSzcUuxd+lGQafv1MoREcQx9/krUMetSquG/Yz9IGqEPdJgbwHmr0AiDYDhNqeCgi+tgD+XzZC0lvCXluUmWmHe+/pAPpESvyHaKEzq50lbWab2uvDxkpz31GcbP+UKT1vQUXcLRmREwHb9UZ4c3g/5HKJmtt2Qh+S/UhDz46gSBaOUlUYePVVoFah71XhJCMiFFQOEriGFSsoGpcLpQXxBIwkCQueMv2J5oxgdyj9Nop25MHA+27CDzVapyWo+RtMLUyQKiAmnQg7VoVZoz3wBqX1UOwg1UFVdbBHV9g/jQ+lm1Nfw8LJ1Ppun80qBFPbC+X3ibQHBovFYLB/Rv31oEr8yC65eRKdfuji+Rat7xNCQu4C2kGCQJpWGSncznykXk1HH57jgkuEDj8BpJp1Z6kT7zwLsdtJQbEVDVgsWlG/zfgeTXNFHDJZ8zSdvB57hlNmwj3jUjT0qBy8GF3dbp0tWLFkyc8mrkaqYa3KlaojyQwGZHHRGNxH1eWPUJVvEujXqHRR9I2O2EPas3KPv5+OY1NGB4R5BeG96G2yZXEY+ddD9YegoBHEBHlSXXOnwtEX7JMg61z2qN24zOEorNrIxqmTtYMQKq0QMSa9IjaNEGwFkMdZybJeP9ltgK1YMGq5omGLb4iyBEaZ4BRq8sflyylcjV9MafZejF9NxxPoiS/SmdRRa3nd02vpa1z198fcNqsdtdxOJ7Ob0fNZCHRSL0PE69f1+vfr6cuTWGmVdnUhGFIWMbcTGp2mpMHKV6Ei/O+y0cqSPzrbUk4krWKrW0CjtkmjI/o+e3p48C9ig2nt</source>
+  </file>
+  <package name="Php4Console" full_name="Php4Console"/>
+  <package name="Text4Shell" full_name="Text4Shell"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
